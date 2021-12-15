@@ -1,0 +1,58 @@
+
+
+<ng-container *ngIf="showDetailInfo === false">
+  <div class="main-text">
+    <span>Latest Releases</span>
+  </div>
+  <ng-container *ngIf="paginatorInfo$ | async as paginatorInfo">
+    <div class="container1" *ngIf="moviesPost$ | async as moviesPost">
+<!--    <div class="container1" *ngFor="let paginationOpts of paginationOptions">-->
+      <div class="movies" *ngFor="let movies of moviesPost |
+       paginate: {itemsPerPage: 20, currentPage: paginatorInfo.page, totalItems: paginatorInfo.totalResults}; let i = index ">
+<!--      <div class="movies" *ngFor="let movies of moviesPost$ | async| paginate: { itemsPerPage: 20, currentPage: paginationOpts.page,-->
+<!--   totalItems: paginationOpts.total_results}; let i = index">-->
+        <img src="{{moviesPhotoUrl}}{{movies.backdrop_path}}" alt="" (click)="showDetailWindow(movies, i)">
+      </div>
+    </div>
+    <pagination-controls (pageChange)="pageChanged($event)"
+                         previousLabel="Prev"
+                         nextLabel="Next"
+    ></pagination-controls>
+  </ng-container>
+</ng-container>
+
+<ng-container *ngIf="showDetailInfo === true && theMovie">
+  <div class="container">
+    <div class="confirm-modal">
+      <div class="header-buttons">
+        <button (click)="closeDetailInfo()">Back to list</button>
+        <button (click)="showNextMovie()">Next Movie</button>
+      </div>
+      <div class="dialog-window">
+        <div class="dialog-img">
+          <img src="{{moviesPhotoUrl}}{{theMovie.backdrop_path}}" alt="">
+        </div>
+        <div class="right-side">
+          <div class="right-side-button" *ngIf="showFavoriteButton === false">
+            <button class="add-to-favorite" (click)="addToFavoriteMovie(theMovie)">Add to favorite</button>
+          </div>
+<!--          <div class="right-side-button" *ngIf="disabledFavoriteButton === true">-->
+<!--            <span class="add-to-favorite">Ur Favorite Movie</span>-->
+<!--          </div>-->
+          <div class="right-side-title">
+            <span>{{theMovie.original_title}}</span>
+          </div>
+          <div class="right-side-subtitle">
+            <span>Score: {{theMovie.vote_average}}</span>
+            <hr>
+            <span>Release data: {{theMovie.release_date}}</span>
+            <hr>
+          </div>
+          <div class="right-side-paragraph">
+            <p>{{theMovie.overview}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

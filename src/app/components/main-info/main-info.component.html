@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="confirm-modal" *ngFor="let movie of moviesPost$ | async">
+    <div class="dialog-window">
+
+      <div class="dialog-img">
+        <img src="{{moviesPhotoUrl}}{{movie.backdrop_path}}" alt="">
+      </div>
+      <div class="right-side">
+        <div class="right-side-button">
+          <button class="add-to-favorite" (click)="doUnFavorite(movie)">Un Favorite</button>
+        </div>
+        <div class="right-side-title">
+          <span>{{movie.original_title}}</span>
+        </div>
+        <div class="right-side-subtitle">
+          <span>Score: {{movie.vote_average}}</span>
+          <hr>
+          <span>Release data: {{movie.release_date}}</span>
+          <hr>
+        </div>
+        <div class="right-side-paragraph">
+          <p>{{movie.overview}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

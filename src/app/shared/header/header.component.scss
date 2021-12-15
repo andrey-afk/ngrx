@@ -1,0 +1,30 @@
+.header {
+  background: grey;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  color: white;
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-icon{
+    margin: 15px 10px 0 10px;
+  }
+  .movies-span {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+  .header-button{
+    color: #ffffff;
+    border: 1px solid #fff;
+    background: none;
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 15px;
+  }
+  .header-button::after {
+    content: "∨";
+    color: #ffffff;
+    margin-left: 10px;
+  }
+}

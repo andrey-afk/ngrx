@@ -1,0 +1,53 @@
+.container {
+  .confirm-modal {
+    .header-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      margin-top: 30px;
+    }
+
+    .dialog-window {
+      display: flex;
+      margin-top: 10%;
+
+      .dialog-img {
+        img {
+          height: 250px;
+        }
+      }
+
+      .right-side {
+        margin-left: 15px;
+
+        .right-side-button {
+          margin-bottom: 10px;
+
+          .add-to-favorite {
+          }
+        }
+
+        .right-side-title {
+          margin-bottom: 10px;
+          span {
+            font-size: 24px;
+          }
+        }
+
+        .right-side-subtitle {
+          margin-bottom: 10px;
+
+          hr {
+            border: none;
+            background-color: black;
+            color: black;
+            height: 2px;
+          }
+        }
+
+        .right-side-paragraph {
+        }
+      }
+    }
+  }
+}
