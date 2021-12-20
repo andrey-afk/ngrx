@@ -9,8 +9,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-import {favoriteReducer, moviesReducer} from "./store/movies-reducer";
+import {moviesReducer} from "./store/movies-reducer";
 import {MoviesEffects} from "./store/movies-effects";
+import {favoriteReducer} from "./store/addToFavorite-reducer";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,6 @@ import {MoviesEffects} from "./store/movies-effects";
     StoreModule.forRoot({}),
     StoreModule.forFeature('movies', moviesReducer),
     StoreModule.forFeature('favoriteMovies', favoriteReducer),
-    // StoreModule.forFeature('movie', showNextMovieReducer),
     EffectsModule.forRoot([MoviesEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

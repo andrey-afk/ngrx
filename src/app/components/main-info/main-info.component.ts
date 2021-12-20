@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {AppState, selectAllFavorites} from "../../store/movies-selectors";
+import {AppState} from "../../store/movies-selectors";
 import {Observable} from "rxjs";
 import * as actions from "../../store/movies-actions";
 import {TheMovies} from "../models/the-movies.interface";
+import {selectAllFavorites} from "../../store/favorite-selectors";
 
 @Component({
   selector: 'app-main-info',

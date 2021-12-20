@@ -2,6 +2,8 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {MainInfoComponent} from "./main-info/main-info.component";
 import {MainPageComponent} from "./main-page/main-page.component";
+import {MovieDetailsComponent} from "./movie-details/movie-details.component";
+import {MoviesResolver} from "./services/movies.resolver";
 
 const routes: Routes = [
   {
@@ -11,7 +13,22 @@ const routes: Routes = [
   },
   {
     path: 'movies',
-    component: MainPageComponent
+    component: MainPageComponent,
+    // children: [{
+    //   path: ':id',
+    //   component: MovieDetailsComponent,
+    //   resolve: {
+    //     movie: MoviesResolver
+    //   },
+    // }]
+  },
+  {
+    path: 'movies/:id',
+    component: MovieDetailsComponent,
+    resolve: {
+      movie: MoviesResolver
+    },
+    runGuardsAndResolvers: 'paramsChange',
   },
   {
     path: 'details-info',

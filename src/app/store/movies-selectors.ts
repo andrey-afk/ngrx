@@ -1,52 +1,14 @@
 import {createSelector} from '@ngrx/store';
-import {FavoriteMovieState, State} from "./movies-reducer";
-import {TheMovies} from "../components/models/the-movies.interface";
-
-
-
-export interface FavoriteState {
-  favoriteMovies: TheMovies[];
-}
-
-export interface FavoriteId {
-  id: number | undefined;
-}
-
-
-export const selectFavoriteState = (state: AppState) => {
-  return  state.favoriteMovies
-};
-
-export const selectAllFavorites = createSelector(
-  selectFavoriteState,
-  (state: FavoriteState) => {
-    return state?.favoriteMovies
-  }
-);
-
-// export const selectIsMovieFavorite = createSelector(
-//   selectFavoriteState,
-//   (state: FavoriteState, props: FavoriteId) => {
-//     return !!state?.favoriteMovies.find((item) => item.id === props.id)
-//   }
-// );
-
-export const selectIsMovieFavorite = (id: number | undefined) =>
-  createSelector(
-    selectFavoriteState,
-    (state: FavoriteState) => {
-      return !!state.favoriteMovies.find(movie => movie.id === id)
-    }
-  )
-
+import {State} from "./movies-reducer";
+import {FavoriteState} from "./addToFavorite-reducer";
 
 export interface AppState {
   movies: State;
   favoriteMovies: FavoriteState;
 }
 
-export const selectState = (state: AppState) => {
-  return  state.movies
+export const selectState: (state: AppState) => State = (state: AppState) => {
+  return state.movies
 };
 
 export const selectAllMovies = createSelector(
@@ -66,4 +28,21 @@ export const selectPaginatorInfo = createSelector(
   }
 );
 
+export const selectMovieById = (id: number | undefined) =>createSelector(
+  selectState,
+  (state: State) =>
+    state?.movies.results?.find(movie => movie.id === id)
 
+);
+
+export const selectNextMovie = (index: number) =>createSelector(
+  selectState,
+  (state: State) => {
+    return state?.movies.results?.find((movie, i) => {
+      if (index == i) {
+        return movie
+      }
+      return
+    })
+  }
+);

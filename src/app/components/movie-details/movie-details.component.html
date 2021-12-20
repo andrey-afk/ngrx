@@ -1,0 +1,37 @@
+
+<ng-container *ngIf="moviePost$ | async as theMovie">
+    <div class="container">
+      <div class="confirm-modal">
+        <div class="header-buttons">
+          <button routerLink="/">Back to list</button>
+          <button (click)="showNextMovie()">Next Movie</button>
+        </div>
+        <div class="dialog-window">
+          <div class="dialog-img">
+            <img src="{{moviePhotoUrl}}{{theMovie.backdrop_path}}" alt="">
+          </div>
+          <div class="right-side">
+            <div class="right-side-button" *ngIf="!showEbButton">
+              <button class="add-to-favorite" (click)="addToFavoriteMovie(theMovie)">Add to favorite</button>
+            </div>
+            <div class="right-side-button" *ngIf="showEbButton">
+              <span class="ur-favorite-movie">Its Your Favorite Movie</span>
+            </div>
+            <div class="right-side-title">
+              <span>{{theMovie.original_title}}</span>
+            </div>
+            <div class="right-side-subtitle">
+              <span>Score: {{theMovie.vote_average}}</span>
+              <hr>
+              <span>Release data: {{theMovie.release_date}}</span>
+              <hr>
+            </div>
+            <div class="right-side-paragraph">
+              <p>{{theMovie.overview}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</ng-container>
+

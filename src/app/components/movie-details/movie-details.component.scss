@@ -1,0 +1,204 @@
+@media screen and (min-width: 260px) and (max-width: 280px) {
+  .container {
+    .confirm-modal {
+      .dialog-window {
+        .dialog-img {
+          img {
+            height: 250px;
+            width: 252px;
+          }
+        }
+
+        .right-side {
+          position: absolute;
+          top: 390px;
+          left: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 360px) {
+
+  .container {
+    .confirm-modal {
+      .dialog-window {
+        .dialog-img {
+          img {
+            height: 250px;
+            width: 260px;
+          }
+        }
+
+        .right-side {
+          margin-left: 15px;
+          position: absolute;
+          top: 370px;
+        }
+      }
+    }
+  }
+  .container {
+    .confirm-modal {
+      .dialog-window {
+        .right-side {
+          position: absolute;
+          top: 397px;
+          left: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 400px) {
+  .container {
+    .confirm-modal {
+      .dialog-window {
+        .dialog-img {
+          img {
+            height: 250px;
+            width: 200px;
+          }
+        }
+
+        .right-side {
+          margin-left: 15px;
+          position: absolute;
+          top: 370px;
+
+          .right-side-button {
+            position: relative;
+            top: -231px;
+            left: 210px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 410px) and (max-width: 450px) {
+  .container {
+    .confirm-modal {
+      .dialog-window {
+        .dialog-img {
+          img {
+            height: 250px;
+            width: 235px;
+          }
+        }
+
+        .right-side {
+          margin-left: 15px;
+          position: absolute;
+          top: 400px;
+          left: -1px;
+
+          .right-side-button {
+            position: relative;
+            top: -256px;
+            left: 277px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
+  .container {
+    .confirm-modal {
+      .dialog-window {
+        .dialog-img {
+          img {
+            height: 250px;
+            width: 340px;
+          }
+        }
+
+        .right-side {
+          position: absolute;
+          top: 415px;
+          left: 0px;
+
+          .right-side-button {
+            position: relative;
+            top: -259px;
+            left: 406px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: 760px) and (max-width: 850px) {
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1300px) {
+}
+
+.container {
+  .confirm-modal {
+    .header-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      margin-top: 30px;
+    }
+
+    .dialog-window {
+      display: flex;
+      margin-top: 10%;
+
+      .dialog-img {
+        img {
+          height: 250px;
+        }
+      }
+
+      .right-side {
+        margin-left: 15px;
+
+        .right-side-button {
+          margin-bottom: 10px;
+
+          .ur-favorite-movie {
+            color: red;
+            font-size: 16px;
+          }
+          .add-to-favorite {
+          }
+        }
+
+        .right-side-title {
+          margin-bottom: 10px;
+
+          span {
+            font-size: 24px;
+          }
+        }
+
+        .right-side-subtitle {
+          margin-bottom: 10px;
+
+          hr {
+            border: none;
+            background-color: black;
+            color: black;
+            height: 2px;
+          }
+        }
+
+        .right-side-paragraph {
+        }
+      }
+    }
+  }
+}
